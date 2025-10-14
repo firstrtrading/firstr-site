@@ -607,12 +607,12 @@ export default function Landing() {
                         </div>
                         <p>© {new Date().getFullYear()} FirstR. Educational content. No trade alerts. Past performance ≠ future results.</p>
                         import Link from "next/link"; // <-- at top of file
-                    <div className="flex flex-wrap gap-4">
-                        <a className="hover:text-white" href="#">Terms</a>
-                        <a className="hover:text-white" href="#">Privacy</a>
-                        <a className="hover:text-white" href="#">Returns</a>
-                        <a className="hover:text-white" href="#">Contact</a>
-                    </div>
+                        <div className="flex flex-wrap gap-4">
+                        <a className="hover:text-white" href="/terms">Terms</a>
+                        <a className="hover:text-white" href="/privacy">Privacy</a>
+                        <a className="hover:text-white" href="/returns">Returns</a>
+  <a className="hover:text-white" href="/contact">Contact</a>
+                          </div>
                 </div>
 
                     {/* MOBILE STICKY BAR */}
