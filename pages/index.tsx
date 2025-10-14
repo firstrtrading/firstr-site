@@ -606,6 +606,7 @@ export default function Landing() {
                             <span className="font-semibold text-white -ml-0.5">FirstR</span>
                         </div>
                         <p>© {new Date().getFullYear()} FirstR. Educational content. No trade alerts. Past performance ≠ future results.</p>
+                        import Link from "next/link"; // <-- at top of file
                     <div className="flex flex-wrap gap-4">
                         <a className="hover:text-white" href="#">Terms</a>
                         <a className="hover:text-white" href="#">Privacy</a>
