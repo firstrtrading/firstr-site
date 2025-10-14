@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Head from "next/head"; // ← add this line
+import Link from "next/link";
 
 export default function Landing() {
     // ===== Replace with your real links =====
@@ -606,13 +607,13 @@ export default function Landing() {
                             <span className="font-semibold text-white -ml-0.5">FirstR</span>
                         </div>
                         <p>© {new Date().getFullYear()} FirstR. Educational content. No trade alerts. Past performance ≠ future results.</p>
-                        import Link from "next/link"; // <-- at top of file
+
                         <div className="flex flex-wrap gap-4">
                         <a className="hover:text-white" href="/terms">Terms</a>
                         <a className="hover:text-white" href="/privacy">Privacy</a>
                         <a className="hover:text-white" href="/returns">Returns</a>
-  <a className="hover:text-white" href="/contact">Contact</a>
-                          </div>
+                        <a className="hover:text-white" href="/contact">Contact</a>
+                     </div>
                 </div>
 
                     {/* MOBILE STICKY BAR */}
