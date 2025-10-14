@@ -1,0 +1,220 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-primary {
+    @apply rounded-xl px-5 py-3 bg-blue-600 hover:bg-blue-500 font-medium transition-transform active:scale-[0.98];
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-ghost {
+    @apply rounded-xl px-5 py-3 bg-white/10 hover:bg-white/20 transition-transform active:scale-[0.98];
+    position: relative;
+    overflow: hidden;
+}
+
+.card {
+    @apply rounded-2xl border border-white/10 bg-neutral-900/50 p-6;
+}
+
+.icon {
+    @apply h-10 w-10 rounded-xl bg-gradient-to-br from-blue-500 to-cyan-400 mb-4;
+}
+
+.progress-card {
+    @apply aspect-[4/3] rounded-xl border border-white/10 bg-neutral-900/60 grid place-items-center text-white/40 text-xs transform-gpu transition will-change-transform hover:scale-[1.02] hover:-rotate-1;
+}
+
+.animate-drift {
+    animation: drift 30s linear infinite;
+}
+
+@keyframes drift {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+
+    50% {
+        transform: translate3d(1.5%,1.5%,0);
+    }
+
+    100% {
+        transform: translate3d(0,0,0);
+    }
+}
+
+.badge-shimmer {
+    position: relative;
+    overflow: hidden;
+}
+
+    .badge-shimmer::after {
+        content: "";
+        position: absolute;
+        inset: -200% 0;
+        background: linear-gradient(120deg,transparent,rgba(255,255,255,.35),transparent);
+        animation: shimmer 10s linear infinite;
+    }
+
+@keyframes shimmer {
+    0% {
+        transform: translateX(-120%);
+    }
+
+    100% {
+        transform: translateX(120%);
+    }
+}
+
+.sample-sweep {
+    position: relative;
+}
+
+    .sample-sweep::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 1rem;
+        border: 1px solid transparent;
+        background: linear-gradient(90deg,rgba(59,130,246,.35),rgba(59,130,246,0)) border-box;
+        -webkit-mask: linear-gradient(#000 0 0) padding-box, linear-gradient(#000 0 0);
+        -webkit-mask-composite: xor;
+        mask-composite: exclude;
+        animation: sweep 2s ease 1 forwards;
+    }
+
+@keyframes sweep {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-shine {
+    position: relative;
+    overflow: hidden;
+}
+
+    .animate-shine::after {
+        content: "";
+        position: absolute;
+        inset: -200% -20%;
+        background: linear-gradient(120deg,transparent,rgba(255,255,255,.6),transparent);
+        animation: shine 0.7s ease forwards;
+    }
+
+@keyframes shine {
+    to {
+        transform: translateX(200%);
+    }
+}
+
+.confetti {
+    position: absolute;
+    top: -10px;
+    width: 8px;
+    height: 12px;
+    background: hsl(var(--h,210) 90% 60%);
+    border-radius: 2px;
+    animation: fall 600ms ease-out forwards;
+    transform: rotate(var(--r,0deg));
+}
+
+    .confetti:nth-child(3n) {
+        --h: 190;
+    }
+
+    .confetti:nth-child(3n+1) {
+        --h: 220;
+    }
+
+    .confetti:nth-child(3n+2) {
+        --h: 260;
+    }
+
+@keyframes fall {
+    0% {
+        transform: translateY(-10px) rotate(0deg);
+    }
+
+    100% {
+        transform: translateY(60vh) rotate(180deg);
+    }
+}
+
+.perspective {
+    perspective: 1200px;
+}
+
+.anchor {
+    scroll-margin-top: 88px;
+}
+/* Ripple */
+.btn-primary.do-ripple::after, .btn-ghost.do-ripple::after {
+    content: "";
+    position: absolute;
+    left: var(--rx);
+    top: var(--ry);
+    width: 0;
+    height: 0;
+    transform: translate(-50%,-50%);
+    background: radial-gradient(circle, rgba(255,255,255,.4), transparent 60%);
+    animation: ripple .6s ease-out forwards;
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    to {
+        width: 320px;
+        height: 320px;
+        opacity: 0;
+    }
+}
+/* Nav underline + active */
+.navlink {
+    position: relative;
+}
+
+    .navlink::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: -6px;
+        height: 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+        background: linear-gradient(90deg,#60a5fa,#22d3ee);
+        transition: transform .24s cubic-bezier(.22,1,.36,1);
+    }
+
+    .navlink:hover::after, .navlink.active::after {
+        transform: scaleX(1);
+    }
