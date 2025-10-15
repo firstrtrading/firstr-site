@@ -536,43 +536,79 @@ export default function Landing() {
                 </section>
 
 
-            {/* PRICING + Labs upsell */}
-            <section id="pricing" className="anchor border-b border-white/10">
-                <div className="mx-auto max-w-6xl px-4 py-16" id="join">
-                    <h2 className="text-2xl md:text-3xl font-bold">Pricing</h2>
-                    <div className="mt-8 grid md:grid-cols-3 gap-6">
-                        <motion.div initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="rounded-2xl border border-white/10 p-6 bg-neutral-900/60">
-                            <h3 className="text-lg font-semibold">Base</h3>
-                            <div className="mt-2 text-3xl font-extrabold">$29</div>
-                            <ul className="mt-4 text-sm text-white/70 space-y-2">
-                                <li>7 lessons (PDF/MD)</li>
-                                <li>Risk tools (CSV)</li>
-                                <li>Journal + checklists</li>
-                            </ul>
-                            <a href={joinBaseHref} onClick={ripple} className="mt-6 inline-block btn-ghost">Join Base</a>
-                        </motion.div>
-                        <motion.div initial={{ opacity: 0, y: 24, scale: 0.98 }} whileInView={{ opacity: 1, y: 0, scale: 1 }} viewport={{ once: true }} transition={{ type: "spring", stiffness: 120, damping: 14 }} className="rounded-2xl border border-blue-400/50 p-6 bg-gradient-to-br from-blue-950 to-neutral-900 shadow-[0_0_0_1px_rgba(59,130,246,0.25)]">
-                            <h3 className="text-lg font-semibold flex items-center gap-2">Pro <span className="badge-shimmer text-xs text-blue-300/80 font-normal">Best value</span></h3>
-                            <div className="mt-2 text-3xl font-extrabold">$59</div>
-                            <ul className="mt-4 text-sm text-white/70 space-y-2">
-                                <li>Everything in Base</li>
-                                <li>Extra drills & templates</li>
-                                <li>Landing copy + email kit</li>
-                            </ul>
-                            <a href={joinProHref} onClick={(e) => { ripple(e); triggerConfetti(); }} className="mt-6 inline-block btn-primary">Join Pro</a>
-                        </motion.div>
-                        <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }} className="rounded-2xl border border-emerald-400/40 p-6 bg-gradient-to-br from-emerald-950 to-neutral-900">
-                            <h3 className="text-lg font-semibold">Labs</h3>
-                            <div className="mt-2 text-3xl font-extrabold">$5<span className="text-base font-semibold">/mo</span></div>
-                            <ul className="mt-4 text-sm text-white/70 space-y-2">
-                                <li>Weekly drills & prompts</li>
-                                <li>New worksheets each month</li>
-                                <li>Discord Labs access</li>
-                            </ul>
-                            <a href={labsHref} onClick={ripple} className="mt-6 inline-block btn-ghost">Join Labs</a>
-                        </motion.div>
-                    </div>
-            </section>
+            {/* PRICING */}
+<section id="pricing" className="anchor border-b border-white/10">
+  <div className="mx-auto max-w-6xl px-4 py-16" id="join">
+    <h2 className="text-2xl md:text-3xl font-bold">Pricing</h2>
+
+    <div className="mt-8 grid md:grid-cols-3 gap-6">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="rounded-2xl border border-white/10 p-6 bg-neutral-900/60"
+      >
+        <h3 className="text-lg font-semibold">Base</h3>
+        <div className="mt-2 text-3xl font-extrabold">$29</div>
+        <ul className="mt-4 text-sm text-white/70 space-y-2">
+          <li>7 lessons (PDF/MD)</li>
+          <li>Risk tools (CSV)</li>
+          <li>Journal + checklists</li>
+        </ul>
+        <a href={joinBaseHref} onClick={ripple} className="mt-6 inline-block btn-ghost">
+          Join Base
+        </a>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 24, scale: 0.98 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        viewport={{ once: true }}
+        transition={{ type: "spring", stiffness: 120, damping: 14 }}
+        className="rounded-2xl border border-blue-400/50 p-6 bg-gradient-to-br from-blue-950 to-neutral-900 shadow-[0_0_0_1px_rgba(59,130,246,0.25)]"
+      >
+        <h3 className="text-lg font-semibold flex items-center gap-2">
+          Pro <span className="badge-shimmer text-xs text-blue-300/80 font-normal">Best value</span>
+        </h3>
+        <div className="mt-2 text-3xl font-extrabold">$59</div>
+        <ul className="mt-4 text-sm text-white/70 space-y-2">
+          <li>Everything in Base</li>
+          <li>Extra drills & templates</li>
+          <li>Landing copy + email kit</li>
+        </ul>
+        <a
+          href={joinProHref}
+          onClick={(e) => { ripple(e); triggerConfetti(); }}
+          className="mt-6 inline-block btn-primary"
+        >
+          Join Pro
+        </a>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6 }}
+        className="rounded-2xl border border-emerald-400/40 p-6 bg-gradient-to-br from-emerald-950 to-neutral-900"
+      >
+        <h3 className="text-lg font-semibold">Labs</h3>
+        <div className="mt-2 text-3xl font-extrabold">
+          $5<span className="text-base font-semibold">/mo</span>
+        </div>
+        <ul className="mt-4 text-sm text-white/70 space-y-2">
+          <li>Weekly drills & prompts</li>
+          <li>New worksheets each month</li>
+          <li>Discord Labs access</li>
+        </ul>
+        <a href={labsHref} onClick={ripple} className="mt-6 inline-block btn-ghost">
+          Join Labs
+        </a>
+      </motion.div>
+    </div>
+  </div>
+</section>
 
             {/* FAQ (animated accordion) */}
             <section id="faq" className="anchor border-b border-white/10">
