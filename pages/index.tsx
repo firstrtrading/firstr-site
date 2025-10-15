@@ -225,7 +225,7 @@ export default function Landing() {
                 <link rel="icon" href="/1R_Black.svg" type="image/svg+xml" media="(prefers-color-scheme: light)" />
             </Head>
 
-        <main className="min-h-screen bg-neutral-950 text-white selection:bg-blue-500/30 selection:text-white">
+            <main className="min-h-screen bg-neutral-950 text-white selection:bg-blue-500/30 selection:text-white pb-28 md:pb-40">
             {/* NAV */}
             <header ref={headerRef} className="sticky top-0 z-50 backdrop-blur border-b border-white/10 bg-neutral-950/70">
                 <div className="mx-auto max-w-6xl px-4 py-3 flex items-center justify-between">
@@ -572,8 +572,6 @@ export default function Landing() {
                             <a href={labsHref} onClick={ripple} className="mt-6 inline-block btn-ghost">Join Labs</a>
                         </motion.div>
                     </div>
-                    <p className="mt-4 text-xs text-white/60">Order bump: Add the Pro template pack for +$9 at checkout.</p>
-                </div>
             </section>
 
             {/* FAQ (animated accordion) */}
@@ -606,7 +604,13 @@ export default function Landing() {
                             <img src="/1R_White.svg" alt="FirstR" className="h-7 w-7" />
                             <span className="font-semibold text-white -ml-0.5">FirstR</span>
                         </div>
-                        <p>© {new Date().getFullYear()} FirstR. Educational content. No trade alerts. Past performance ≠ future results.</p>
+                        <p className="max-w-3xl">
+  © {new Date().getFullYear()} FirstR. Educational content — no trade alerts, not investment advice.
+  Use paper/sim accounts while learning. Past performance is not indicative of future results.
+  Read our <a className="underline hover:text-white" href="/terms">Terms</a>,{" "}
+  <a className="underline hover:text-white" href="/privacy">Privacy</a>, and{" "}
+  <a className="underline hover:text-white" href="/returns">Returns</a>.
+</p>
 
                         <div className="flex flex-wrap gap-4">
                         <a className="hover:text-white" href="/terms">Terms</a>
